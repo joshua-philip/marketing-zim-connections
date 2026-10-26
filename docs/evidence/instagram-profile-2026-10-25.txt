@@ -1,0 +1,13 @@
+Browser tab: 3, Title: "ZIM 🚀 Travel eSIMs & Data Plans (@zim_connections) • Instagram photos and videos", URL: "https://www.instagram.com/zim_connections/".
+0 AXWebArea ZIM 🚀 Travel eSIMs & Data Plans (@zim_connections) • Instagram photos and videos, URL: instagram.com/zim_connections/
+	1 container
+		2 container
+			3 container
+				4 button Close
+					5 image Close
+				6 image Illustration of see this story upsell
+				7 text Continue watching More photos, videos, and ways to connect with  zim_connections .
+				8 button Sign up
+				9 button Log in
+
+The focused UI element is 4 button Close

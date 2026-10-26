@@ -1,0 +1,214 @@
+/**
+ * @module styles/commercial
+ * @meta commercial styles; loaded in cascade order by styles/index.css.
+ */
+
+.budget {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.budget-total {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 77px;
+  line-height: 1;
+  margin-top: 32px;
+  color: var(--accent);
+}
+
+.budget-total span {
+  font-family: 'DM Sans';
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  display: block;
+  color: #a799b1;
+  margin-top: 15px;
+}
+
+.budget-bar {
+  display: flex;
+  gap: 3px;
+  margin-top: 23px;
+  width: 85%;
+  height: 9px;
+}
+
+.budget-bar i {
+  background: var(--accent);
+}
+
+.budget-table > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 19px 0;
+}
+
+.budget-table b {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.budget-table small {
+  font-size: 9px;
+  color: #8f8298;
+  display: block;
+  margin-top: 6px;
+}
+
+.budget-table strong {
+  font-size: 17px;
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+.budget-table .total {
+  border-bottom: none;
+  padding-top: 23px;
+  color: var(--accent);
+}
+
+.budget-table .total strong {
+  font-size: 25px;
+}
+
+.decision h1 {
+  font-size: clamp(55px, 6vw, 94px);
+}
+
+.targets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 30px;
+  margin-top: 27px;
+}
+
+.targets > div {
+  border-top: 1px solid #42314e;
+  padding-top: 14px;
+}
+
+.targets strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 63px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.targets span {
+  font-size: 10px;
+  color: #b0a6b7;
+  display: block;
+  margin-top: 8px;
+}
+
+.financial {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+}
+
+.financial strong {
+  font-size: 21px;
+  font-weight: 450;
+}
+
+.financial span {
+  font-size: 8px;
+  line-height: 1.7;
+  display: block;
+  color: #9a8ea3;
+  margin-top: 6px;
+  max-width: 200px;
+}
+
+.ask {
+  display: flex;
+  gap: 15px;
+  margin: 24px 0 18px;
+  padding: 17px 0;
+  border-top: 1px solid #44384d;
+  border-bottom: 1px solid #44384d;
+}
+
+.ask > svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.ask p {
+  font-size: 15px;
+}
+
+.ask span {
+  display: block;
+  color: #9c92a3;
+  font-size: 9px;
+  margin-top: 7px;
+}
+
+.decision > .micro {
+  font-size: 7px;
+}
+
+.reference-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 45px;
+  row-gap: 16px;
+  margin-top: 28px;
+}
+
+.reference-grid > a {
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.reference-grid > a > span {
+  font-size: 8px;
+  color: #867394;
+  padding-top: 3px;
+}
+
+.reference-grid p {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #bcb4c2;
+}
+
+.reference-grid em {
+  color: #a89bb1;
+  font-style: italic;
+}
+
+.reference-grid small {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #8c7d98;
+  font-size: 8px;
+  margin-top: 3px;
+}
+
+.reference-retrieval {
+  display: block;
+  font-size: 8px;
+  color: #a89bb1;
+}
+
+.references h1 {
+  font-size: 65px;
+}
+
+.references .kicker {
+  margin-bottom: 15px;
+}

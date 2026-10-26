@@ -1,0 +1,25 @@
+/**
+ * @module styles/divider-motion
+ * @meta Keeps one quiet ticket-perforation accent; page chrome and editorial dividers stay static.
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The ticket cutouts own both pseudo-elements, so animate only its background. */
+  .squad-divider {
+    background: linear-gradient(90deg, transparent, #c9a4ef59, transparent) no-repeat;
+    background-size: 25% 1px;
+    background-origin: border-box;
+    animation: idle-divider 16s ease-in-out 1.2s infinite;
+  }
+
+  @keyframes idle-divider {
+    0%,
+    35% {
+      background-position: -100% 0;
+    }
+    75%,
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}

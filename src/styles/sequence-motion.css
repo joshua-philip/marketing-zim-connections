@@ -1,0 +1,148 @@
+/**
+ * @module styles/sequence-motion
+ * @meta Gives segmented storyboard and month rails a shared cycle with one travelling marker at a time.
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .storyboard > div,
+  .timeline > div {
+    --sequence-index: 0;
+  }
+  :is(.storyboard, .timeline) > div:nth-child(2) {
+    --sequence-index: 1;
+  }
+  :is(.storyboard, .timeline) > div:nth-child(3) {
+    --sequence-index: 2;
+  }
+  :is(.storyboard, .timeline) > div:nth-child(4) {
+    --sequence-index: 3;
+  }
+  .timeline > div:nth-child(5) {
+    --sequence-index: 4;
+  }
+  .timeline > div:nth-child(6) {
+    --sequence-index: 5;
+  }
+
+  .storyboard > div,
+  .timeline i {
+    container-type: inline-size;
+    --sequence-gap: 25px;
+  }
+
+  .storyboard > div {
+    position: relative;
+  }
+
+  .storyboard > div::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 38px;
+    height: 1px;
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, #d7b9f9, transparent);
+    pointer-events: none;
+    animation: idle-storyboard-sequence 12s linear calc(1.2s + var(--sequence-index) * 3s) infinite;
+  }
+
+  .storyboard > div:last-child {
+    --sequence-gap: -38px;
+  }
+
+  .storyboard .frame-art::after {
+    animation: idle-storyboard-sheen 12s linear calc(1.2s + var(--sequence-index) * 3s) infinite;
+  }
+
+  .timeline i::before {
+    opacity: 0;
+    box-shadow: 0 0 9px #c8a4f266;
+    animation: idle-month-sequence 12s linear calc(1.2s + var(--sequence-index) * 2s) infinite;
+  }
+
+  .timeline > div:last-child i {
+    --sequence-gap: -5px;
+  }
+
+  @keyframes idle-storyboard-sequence {
+    0% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    24.999% {
+      opacity: 1;
+      translate: calc(100cqw + var(--sequence-gap)) 0;
+    }
+    25%,
+    100% {
+      opacity: 0;
+      translate: calc(100cqw + var(--sequence-gap)) 0;
+    }
+  }
+
+  @keyframes idle-month-sequence {
+    0% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    16.666% {
+      opacity: 1;
+      translate: calc(100cqw + var(--sequence-gap)) 0;
+    }
+    16.667%,
+    100% {
+      opacity: 0;
+      translate: calc(100cqw + var(--sequence-gap)) 0;
+    }
+  }
+
+  @keyframes idle-storyboard-sheen {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    3% {
+      opacity: 1;
+    }
+    22% {
+      opacity: 1;
+      transform: translateX(100%);
+    }
+    25%,
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .storyboard > div {
+      --sequence-gap: 15px;
+    }
+    .storyboard > div:last-child {
+      --sequence-gap: -38px;
+    }
+    .timeline i {
+      --sequence-gap: 13px;
+    }
+    .timeline > div:last-child i {
+      --sequence-gap: -5px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .storyboard > div {
+      --sequence-gap: 20px;
+    }
+    .storyboard > div:nth-child(even) {
+      --sequence-gap: -38px;
+    }
+    .timeline i {
+      --sequence-gap: 18px;
+    }
+    .timeline > div:nth-child(3n) i {
+      --sequence-gap: -5px;
+    }
+  }
+}

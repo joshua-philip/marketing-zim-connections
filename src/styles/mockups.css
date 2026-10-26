@@ -1,0 +1,331 @@
+/**
+ * @module styles/mockups
+ * @meta mockups styles; loaded in cascade order by styles/index.css.
+ */
+
+.avatars {
+  display: flex;
+  padding-left: 0;
+}
+
+.avatars > span {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  background: var(--av, #bdb0c6);
+  color: #341e43;
+  border: 2px solid #1d1721;
+  border-radius: 50%;
+  margin-left: -7px;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-block: 0;
+}
+
+.traveller-initial {
+  display: block;
+  line-height: 1;
+  text-align: center;
+}
+
+.avatars > span:first-child {
+  margin-left: 0;
+  background: #d2c7d9;
+}
+
+.avatars > span:nth-child(2) {
+  background: #b2a3bc;
+}
+
+.avatars > span:nth-child(3) {
+  background: #d1b5a2;
+}
+
+.avatars > span:nth-child(4) {
+  background: #777d75;
+  color: #fff;
+}
+
+.phone {
+  width: 253px;
+  --morph-fill: #16101a;
+  background: var(--morph-fill);
+  --morph-stroke: #52455b;
+  border: 1px solid var(--morph-stroke);
+  border-radius: 31px;
+  padding: 11px 9px 20px;
+  --morph-shadow: 0 20px 70px #0007;
+  box-shadow: var(--morph-shadow);
+  margin: auto;
+  position: relative;
+}
+
+.phone-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px 12px;
+  font-size: 9px;
+}
+
+.island {
+  width: 67px;
+  height: 17px;
+  background: #050709;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1px;
+  border-radius: 10px;
+}
+
+.ig-head {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 8px 5px 11px;
+}
+
+.ig-avatar {
+  border: 1px solid #907f9d;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ig-head > span {
+  font-size: 8px;
+  flex: 1;
+}
+
+.ig-head small {
+  display: block;
+  font-size: 6px;
+  color: #95889e;
+  margin-top: 4px;
+}
+
+.phone-content {
+  min-height: 280px;
+  background: #23192a;
+  position: relative;
+  overflow: hidden;
+}
+
+.ig-actions {
+  display: flex;
+  gap: 12px;
+  padding: 13px 4px 4px;
+}
+
+.ig-actions svg {
+  width: 17px;
+  height: 17px;
+}
+
+.ig-actions svg:last-child {
+  margin-left: auto;
+}
+
+.phone-caption {
+  font-size: 8px;
+  line-height: 1.6;
+  color: #b9afc0;
+  padding: 8px 5px 10px;
+}
+
+.home-indicator {
+  width: 72px;
+  height: 3px;
+  background: #a59cab;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reel-scene {
+  min-height: 288px;
+  padding: 21px 15px 36px;
+  background: linear-gradient(150deg, #382745, #1c1422);
+  position: relative;
+}
+
+.reel-destination {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 75px;
+  color: #77618766;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.reel-destination > .reel-trip-date {
+  display: block;
+  font: 6px 'DM Sans';
+  letter-spacing: 1px;
+  color: #9d8aab;
+  margin-top: 8px;
+}
+
+.reel-hook {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 1.1;
+  margin-top: 25px;
+}
+
+.reel-check {
+  display: grid;
+  margin-top: 18px;
+  font-size: 8px;
+  gap: 6px;
+  color: #c3b6cc;
+}
+
+.reel-check > div {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.reel-check svg {
+  width: 10px;
+  height: 10px;
+}
+
+.reel-tag {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-size: 5px;
+  letter-spacing: 1px;
+  color: #9076a2;
+}
+
+.story .phone-content {
+  padding: 20px 15px;
+  background: #30203c;
+  min-height: 332px;
+}
+
+.story-progress {
+  display: flex;
+  gap: 3px;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  right: 5px;
+}
+
+.story-progress i {
+  height: 2px;
+  background: #ffffff55;
+  flex: 1;
+}
+
+.story-progress i:first-child {
+  background: #cbbdd5;
+}
+
+.story .micro {
+  font-size: 6px;
+  color: #b3a1c0;
+}
+
+.story h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  line-height: 1.1;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.poll {
+  border-radius: 6px;
+  background: #e9e3ed;
+  color: #32213e;
+  padding: 11px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.poll > b {
+  font-size: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.poll > span {
+  display: block;
+  border: 1px solid #c6becc;
+  font-size: 9px;
+  padding: 9px;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+.story-next {
+  font-size: 8px;
+  line-height: 1.8;
+  color: #c1b5ca;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.story-link {
+  font-size: 8px;
+  border: 1px solid #8b739c;
+  padding: 8px;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.device-indicators {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.device-indicators svg {
+  width: 10px;
+  height: 10px;
+}
+.device-indicators svg:last-child {
+  width: 16px;
+  height: 13px;
+}
+.phone-caption b {
+  color: #e3dfe6;
+  font-weight: 550;
+}
+.story-reply {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 4px 0;
+  color: #d1c9d6;
+}
+.story-reply > span {
+  flex: 1;
+  border: 1px solid #74677e;
+  border-radius: 20px;
+  padding: 8px 10px;
+  font-size: 7px;
+  color: #c9c0d0;
+}
+.story-reply svg {
+  width: 16px;
+  height: 16px;
+}

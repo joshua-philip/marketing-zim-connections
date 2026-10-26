@@ -1,0 +1,133 @@
+/**
+ * @module styles/shared-mockups
+ * @meta Keeps shared identity visuals independent of copy fades while preserving each mockup’s natural layout.
+ */
+
+.shared-element {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+.stage [data-shared-anchor='true'] {
+  opacity: 0;
+}
+.shared-element-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.shared-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  transform-origin: center;
+  box-sizing: border-box;
+  border-style: solid;
+  pointer-events: none;
+}
+.shared-visual--avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.shared-visual--plane {
+  display: grid;
+  place-items: center;
+}
+.shared-visual--plane svg,
+.shared-flight-icon svg {
+  width: 100%;
+  height: 100%;
+  rotate: 12deg;
+}
+.shared-flight-icon {
+  display: inline-flex;
+  width: 19px;
+  height: 19px;
+  align-items: center;
+  justify-content: center;
+}
+.ticket-flight > .shared-flight-icon {
+  flex: 0 0 19px;
+  border: 0;
+}
+[data-shared-item='trip-code'] {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+}
+[data-shared-item='trip-city'],
+[data-shared-item='trip-departure'],
+[data-shared-item='trip-return'] {
+  font-weight: 500;
+}
+.avatars--cluster {
+  display: grid;
+  grid-template-columns: repeat(2, 16px);
+  gap: 2px;
+  width: 34px;
+  height: 34px;
+}
+.avatars--cluster > .traveller-avatar {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border-width: 1px;
+  font-size: 5px;
+}
+.reel-people {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  font-size: 6px;
+  color: #bfaccc;
+}
+.reel-people .avatars > span,
+.story-next--group .avatars > span,
+.landing-squad .avatars > span {
+  width: 18px;
+  height: 18px;
+  font-size: 6px;
+  border-width: 1px;
+  margin-left: -5px;
+}
+.reel-people .avatars > span:first-child,
+.story-next--group .avatars > span:first-child,
+.landing-squad .avatars > span:first-child {
+  margin-left: 0;
+}
+.story-trip {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 6px;
+  color: #cab9d7;
+  margin: 0 0 14px;
+}
+.story-next--group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+.story-next--group p {
+  font-size: 7px;
+  line-height: 1.7;
+}
+.landing-squad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #beaccb;
+  font-size: 7px;
+}
+.form-field > .form-date {
+  display: block;
+}

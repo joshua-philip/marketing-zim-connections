@@ -1,0 +1,85 @@
+/**
+ * @module styles/flight-motion
+ * @meta Flies the plane inside a stationary route anchor, leaving shared layout measurements stable.
+ */
+
+@property --flight-route-on {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.shared-visual--plane,
+.shared-flight-icon {
+  container-type: size;
+}
+
+.ticket-flight > .shared-flight-icon--route {
+  flex: 1;
+  width: 100%;
+  height: 19px;
+  border: 0;
+}
+
+.flight-plane {
+  display: block;
+  width: 100cqh;
+  height: 100cqh;
+  flex: 0 0 auto;
+  transform: rotate(45deg);
+}
+
+.flight-plane > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  rotate: none;
+}
+
+.shared-flight-icon:not(.shared-flight-icon--route) > .flight-plane {
+  transform: rotate(12deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .shared-visual--plane {
+    --flight-route-on: 0;
+    transition: --flight-route-on 0.7s ease;
+  }
+
+  .stage:has(.slide:not([aria-hidden='true']) .ticket-flight) .shared-visual--plane,
+  .ticket-flight .shared-flight-icon--route {
+    --flight-route-on: 1;
+  }
+
+  /* The same loop becomes a stationary icon when its container shrinks to a chat pin. */
+  .flight-plane {
+    animation: idle-round-trip 12s ease-in-out 1.2s infinite both;
+  }
+
+  .stage .shared-visual .flight-plane {
+    animation-play-state: var(--idle-motion-state, running);
+  }
+
+  @keyframes idle-round-trip {
+    0% {
+      transform: translateX(calc((100cqw - 100cqh) * -0.5 * var(--flight-route-on)))
+        rotate(calc(12deg + 33deg * var(--flight-route-on)));
+    }
+    42% {
+      transform: translateX(calc((100cqw - 100cqh) * 0.5 * var(--flight-route-on)))
+        rotate(calc(12deg + 33deg * var(--flight-route-on)));
+    }
+    50% {
+      transform: translateX(calc((100cqw - 100cqh) * 0.5 * var(--flight-route-on)))
+        rotate(calc(12deg + 213deg * var(--flight-route-on)));
+    }
+    92% {
+      transform: translateX(calc((100cqw - 100cqh) * -0.5 * var(--flight-route-on)))
+        rotate(calc(12deg + 213deg * var(--flight-route-on)));
+    }
+    100% {
+      transform: translateX(calc((100cqw - 100cqh) * -0.5 * var(--flight-route-on)))
+        rotate(calc(12deg + 393deg * var(--flight-route-on)));
+    }
+  }
+}

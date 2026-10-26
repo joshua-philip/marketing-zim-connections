@@ -1,0 +1,203 @@
+/**
+ * @module styles/continuity
+ * @meta Authored landing positions for the persistent group, objective labels and investment.
+ */
+
+.brand-logo {
+  width: 73px;
+  height: 36px;
+  object-fit: contain;
+}
+.ticket-brand img {
+  width: 49px;
+  height: 24px;
+  object-fit: contain;
+}
+.landing-nav img {
+  width: 43px;
+  height: 21px;
+  object-fit: contain;
+}
+.app {
+  background: radial-gradient(ellipse at 80% 35%, #3f0a7238, transparent 60%), #100a19;
+}
+.squad {
+  --morph-fill: #27123f;
+  --morph-stroke: #775197;
+}
+/* The offset plate is part of the card's final paint, never an outgoing shadow tween. */
+[data-depth='true'] {
+  --morph-shadow: 9px 11px 0 -1px #241533, 9px 11px 0 0 #62418066, 0 24px 60px #0007;
+}
+.research {
+  --morph-fill: #20132e;
+  --morph-stroke: #684783;
+  border: 1px solid var(--morph-stroke);
+  border-radius: 14px;
+  padding: 23px;
+}
+.research p {
+  margin-top: 12px;
+}
+.squad-continuity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  color: #a89ab2;
+  font-size: 9px;
+}
+.squad-continuity .avatars,
+.bottom-callout .avatars,
+.ask .avatars {
+  flex-shrink: 0;
+  margin: 0;
+}
+.persona-card > .avatars {
+  margin: 18px 0;
+}
+.comparison .avatars {
+  margin-top: 12px;
+}
+.baseline [data-morph] > .avatars {
+  margin-top: 18px;
+}
+.mini-status .avatars {
+  margin: 8px 0 0;
+  justify-content: center;
+}
+.mini-status .avatars > span {
+  width: 25px;
+  height: 25px;
+  font-size: 8px;
+  border-width: 1px;
+}
+.ask {
+  align-items: center;
+}
+.ask .avatars > span {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  margin-top: 0;
+  font-size: 8px;
+  letter-spacing: 0;
+  color: #251333;
+}
+.ask .traveller-initial {
+  display: inline;
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+.campaign-trail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 23px;
+}
+.phase-marker {
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid #6d47884d;
+  border-radius: 5px;
+  background: #3f0a721a;
+  color: var(--accent);
+  padding: 7px 9px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.shared-visual[data-shared-visual^='phase-'] {
+  display: grid;
+  place-items: center;
+}
+.stage .phase-marker[data-pillar-active='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #241333;
+}
+.journey .phase-marker {
+  margin-left: 8px;
+}
+.bands .phase-marker {
+  padding: 6px 4px;
+  font-size: 7px;
+  color: var(--accent);
+}
+.targets .phase-marker {
+  display: inline-grid;
+  font-size: 7px;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+.budget-total > [data-shared-item] {
+  display: inline-block;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+}
+.ask [data-shared-item='campaign-investment'] {
+  display: inline-block;
+  font: inherit;
+  color: var(--accent);
+  margin: 0;
+}
+.references .campaign-trail {
+  margin-top: 14px;
+}
+/* Reserve the final number's width so counting never moves adjacent copy or shared anchors. */
+.stage .count-up,
+.stage .count-up > span {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+}
+.stage .count-up {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.stage .count-up-reserve {
+  display: inline-block;
+  opacity: 0;
+  pointer-events: none;
+}
+.stage .count-up-value {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+@media (max-width: 600px) {
+  [data-depth='true'] {
+    --morph-shadow: 5px 7px 0 -1px #241533, 5px 7px 0 0 #62418066, 0 18px 40px #0006;
+  }
+  .research {
+    padding: 20px;
+    border: 1px solid var(--morph-stroke);
+  }
+  .brand-logo {
+    width: 58px;
+    height: 28px;
+  }
+  .campaign-trail {
+    gap: 5px;
+  }
+  .phase-marker {
+    padding: 6px 7px;
+    font-size: 6px;
+  }
+  .bottom-callout:has(.avatars) {
+    flex-wrap: wrap;
+  }
+  .ask {
+    flex-wrap: wrap;
+  }
+}

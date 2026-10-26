@@ -1,0 +1,61 @@
+/**
+ * @module styles/base
+ * @meta base styles; loaded in cascade order by styles/index.css.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap');
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #fffdef;
+  background: #100a19;
+  font-synthesis: none;
+  --muted: #9a9fa8;
+  --brand-purple: #3f0a72;
+  --accent: #c8a4f2;
+  --line: #26292e;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+button {
+  color: inherit;
+}
+button svg {
+  flex-shrink: 0;
+}
+button:hover {
+  color: var(--accent);
+}
+::selection {
+  background: var(--accent);
+  color: #100a19;
+}
+.app {
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 75% 40%, #18131c55, transparent 50%), #100a19;
+}

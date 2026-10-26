@@ -1,0 +1,125 @@
+/**
+ * @module styles/print-deck
+ * @meta Export-only 16:9 page geometry; imported solely by the static print entry.
+ */
+
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+
+html:has(.print-deck),
+body:has(.print-deck) {
+  width: 1280px;
+  height: auto;
+  overflow: visible;
+  margin: 0;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.print-deck {
+  width: 1280px;
+}
+
+.print-page {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid;
+  break-after: page;
+  background: radial-gradient(ellipse at 80% 35%, #3f0a7238, transparent 60%), #100a19;
+}
+
+.print-page:last-child {
+  break-after: auto;
+}
+
+.print-brand {
+  margin: 0 52px;
+  height: 70px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+
+.print-proposal {
+  margin-left: auto;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  color: #bbc0c5;
+}
+
+.print-page .section-meta {
+  margin: 0 78px;
+  height: 46px;
+  align-items: center;
+}
+
+.print-page .print-stage {
+  width: 1120px;
+  height: 494px;
+  min-height: 0;
+  margin: 0 auto;
+  display: block;
+  perspective: none;
+}
+
+.print-page .slide {
+  position: absolute;
+  inset-inline: 0;
+  padding: 0;
+}
+
+/* Zoom sizes the printed layout box as well as its paint, avoiding Chromium fragment clipping. */
+.print-page .slide-canvas {
+  width: 1120px;
+  margin-inline: auto;
+}
+
+.print-page .source {
+  display: block;
+  position: absolute;
+  bottom: 37px;
+  left: 78px;
+  max-width: 1020px;
+  margin: 0;
+  font-size: 9px;
+}
+
+.print-page-number {
+  position: absolute;
+  bottom: 37px;
+  right: 78px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* Export contains the final value once, independent of animation or hydration timing. */
+.print-page .count-up-reserve {
+  opacity: 1;
+}
+
+.print-page .count-up-value {
+  display: none;
+}
+
+.print-page *,
+.print-page *::before,
+.print-page *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.print-page [data-morph] {
+  --surface-ink: 1 !important;
+  --surface-offset: 0px !important;
+}
+
+.print-page [data-flow-content],
+.print-page h1,
+.print-page .kicker > div {
+  opacity: 1 !important;
+  transform: none !important;
+}

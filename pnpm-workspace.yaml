@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+
+# React Doctor's tracing dependencies require the pre-1.10 API peer range.
+overrides:
+  '@opentelemetry/api': 1.9.0

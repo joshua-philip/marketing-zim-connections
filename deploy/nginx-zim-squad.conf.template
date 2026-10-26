@@ -1,0 +1,43 @@
+# ZIM Squad: isolated static vhost on the existing shared Nginx instance.
+# First install only: pnpm deploy:nginx your.hostname.example
+# Certbot then adds HTTPS; later content deployments never replace this config.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name __DOMAIN__;
+
+    root /var/www/zim-squad/current;
+    index index.html;
+    autoindex off;
+
+    access_log /var/log/nginx/zim-squad.access.log;
+    error_log /var/log/nginx/zim-squad.error.log;
+
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+
+    # This deck has no pathname routes. Missing files must be real 404s, not HTML
+    # accidentally returned as a JavaScript module. /?print still uses index.html.
+    location / {
+        try_files $uri $uri/ =404;
+        add_header Cache-Control "no-cache";
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy strict-origin-when-cross-origin always;
+    }
+
+    # Content-hashed Vite chunks are retained between releases so an already-open
+    # deck can still load its original lazy print chunk after a deployment.
+    location /assets/ {
+        root /var/www/zim-squad;
+        try_files $uri =404;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy strict-origin-when-cross-origin always;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}

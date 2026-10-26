@@ -1,0 +1,121 @@
+/**
+ * @module styles/motion
+ * @meta Keeps the presentation canvas bounded on desktop and tablet while preserving readable mobile scroll.
+ */
+
+.slide-canvas {
+  width: 100%;
+}
+
+.audience-bottom .avatars {
+  margin: 12px 0;
+}
+
+/* Paint is carried by one persistent frame; live text never inherits its geometry. */
+.stage {
+  isolation: isolate;
+}
+.slide {
+  position: relative;
+  z-index: 1;
+}
+.stage .morph-frame {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--morph-fill, transparent);
+  border: inherit;
+  border-color: var(--morph-stroke, currentColor);
+  border-radius: inherit;
+  box-shadow: var(--morph-shadow, none);
+}
+.stage [data-morph='story-surface'] {
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Exiting slides leave document flow immediately and clear before incoming copy appears. */
+.slide[aria-hidden='true'] {
+  position: absolute;
+  inset-inline: 0;
+  pointer-events: none;
+}
+.slide[aria-hidden='true'] .morph-frame {
+  visibility: hidden;
+}
+[data-morph='story-surface'] > :not(.morph-frame) {
+  opacity: var(--surface-ink, 1);
+  translate: 0 var(--surface-offset, 0px);
+}
+.orbit,
+.vertical-word,
+.art-label,
+.art-caption,
+.presented,
+.baseline-arrow,
+.pill,
+.decision > .micro {
+  opacity: var(--scene-ink, 1);
+}
+
+@media (min-width: 601px) {
+  body {
+    overflow: hidden;
+  }
+  .app {
+    height: 100dvh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  header,
+  footer {
+    flex-shrink: 0;
+  }
+  main {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .section-meta,
+  .source {
+    flex-shrink: 0;
+  }
+  .stage {
+    min-height: 0;
+    display: block;
+  }
+  .slide {
+    position: absolute;
+    inset-inline: 0;
+    padding: 0;
+  }
+  .slide-canvas {
+    padding: 28px 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .slide-canvas {
+    padding: 24px 0;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 800px) {
+  .slide-canvas {
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide {
+    top: 0 !important;
+  }
+}

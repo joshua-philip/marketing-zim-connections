@@ -1,0 +1,81 @@
+/**
+ * @module styles/panels
+ * @meta panels styles; loaded in cascade order by styles/index.css.
+ */
+
+.fullscreen-error {
+  position: fixed;
+  left: 50%;
+  bottom: 95px;
+  z-index: 40;
+  max-width: min(420px, 90vw);
+  transform: translateX(-50%);
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  background: #1a151e;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #100b13f8;
+  z-index: 20;
+  padding: 5vh 7%;
+  overflow: auto;
+  backdrop-filter: blur(20px);
+}
+.overlay-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.overlay h2 {
+  font-size: 34px;
+  letter-spacing: -1px;
+  font-weight: 450;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 35px;
+}
+.overview-grid > button {
+  text-align: left;
+  border: 1px solid #32263b;
+  background: #18101e;
+  padding: 19px;
+  min-height: 110px;
+  transition: background 0.2s;
+}
+.overview-grid > button.current,
+.overview-grid > button:hover {
+  border-color: #ab8bc2;
+  background: #24182d;
+}
+.overview-grid > button > span {
+  font-size: 9px;
+  color: #a28cb2;
+}
+.overview-grid h3 {
+  font-size: 16px;
+  font-weight: 450;
+  margin: 15px 0;
+}
+.overview-grid small {
+  font-size: 9px;
+  color: #92849c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}

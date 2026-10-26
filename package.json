@@ -1,0 +1,56 @@
+{
+  "name": "zim-squad-launch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "deploy:static": "pnpm build && pnpm deploy:publish",
+    "deploy:publish": "bash scripts/publish-static.sh",
+    "deploy:nginx": "bash scripts/install-nginx.sh",
+    "lint": "oxlint --deny-warnings",
+    "typecheck": "tsc --noEmit",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:deployment": "bash scripts/test-deployment.sh",
+    "export:pdf": "pnpm build && playwright install chromium && tsx scripts/export-pdf.ts",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm check:architecture && pnpm test && pnpm build",
+    "lint:fix": "oxlint --fix --deny-warnings",
+    "check:architecture": "tsx scripts/check-architecture.ts",
+    "doctor": "react-doctor --yes --verbose",
+    "doctor:changed": "react-doctor --yes --verbose --scope changed --include-untracked"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "motion": "^12.23.24",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "jsdom": "^26.1.0",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "oxlint-tsgolint": "^7.0.2005",
+    "playwright": "^1.64.1",
+    "react-doctor": "^0.9.18",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^7.2.2",
+    "vitest": "^3.2.7"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "pnpm@12.5.1"
+}

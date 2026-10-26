@@ -1,0 +1,291 @@
+/**
+ * @module styles/evidence
+ * @meta Gives campaign evidence and explicit funnel assumptions space without adding decorative motion.
+ */
+
+.audience-evidence,
+.channel-evidence {
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.audience-evidence {
+  margin-top: 40px;
+  padding-top: 24px;
+}
+
+.audience-evidence > strong,
+.channel-evidence > strong {
+  color: var(--accent);
+  font-size: 21px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.audience-evidence > strong span,
+.channel-evidence > strong span {
+  color: #b7a6c4;
+  font-size: 14px;
+}
+
+.audience-evidence p,
+.channel-evidence p {
+  color: #c1b4cb;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.audience-evidence > small {
+  color: #9f8dac;
+  font-size: 9px;
+  line-height: 1.6;
+  max-width: 250px;
+}
+
+.channel-evidence + .journey {
+  margin-top: 28px;
+}
+
+.competition .comparison {
+  margin-top: 24px;
+}
+
+.competition .comparison > div:not(.table-head) {
+  padding-block: 17px;
+}
+
+.competitor-case {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.competitor-case h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 7px;
+}
+
+.competitor-case p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #c1b4cb;
+  margin-top: 7px;
+}
+
+.competition .under-note {
+  margin-top: 14px;
+}
+
+.planning-funnel {
+  margin-top: 20px;
+  padding: 14px 0;
+  border-block: 1px solid var(--line);
+}
+
+.planning-funnel ol {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.planning-funnel li {
+  position: relative;
+}
+
+.planning-funnel li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: 0;
+  top: 8px;
+  color: #9577ad;
+}
+
+.planning-funnel strong {
+  color: #d9c5eb;
+  font-size: 27px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.planning-funnel li span,
+.planning-funnel li small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #c1b4cb;
+}
+
+.planning-funnel li small {
+  font-size: 9px;
+  color: #a592b3;
+}
+
+.funnel-caveat {
+  font-size: 9px;
+  color: #b9a8c5;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.decision .targets {
+  margin-top: 20px;
+}
+
+.decision .targets strong {
+  font-size: 52px;
+}
+
+.decision .financial {
+  margin-top: 16px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.decision .ask {
+  margin-block: 17px 12px;
+  padding-block: 12px;
+}
+
+.awareness-content .frame-art {
+  height: 145px;
+}
+
+.creator-shortlist {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.65fr) minmax(0, 2fr);
+  gap: 16px 28px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.creator-shortlist-heading h2 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ece1f5;
+}
+
+.creator-shortlist-heading > span {
+  font-size: 10px;
+  color: #a592b3;
+}
+
+.creator-shortlist ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.creator-shortlist a {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.creator-shortlist a strong {
+  font-weight: 500;
+}
+
+.creator-shortlist a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.creator-shortlist .creator-handle {
+  font-size: 10px;
+  color: #a592b3;
+}
+
+.creator-shortlist li p {
+  margin: 5px 0 0;
+  color: #c1b4cb;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.creator-selection-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 14px;
+  border-left: 2px solid #685080;
+  background: #b99ade08;
+  color: #b9a8c5;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.creator-selection-note strong {
+  font-weight: 500;
+  color: #d9c5eb;
+  margin-right: 12px;
+}
+
+@media (max-width: 900px) {
+  .audience-evidence {
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+
+  .audience-evidence > small {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .creator-shortlist {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .creator-shortlist ul {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .audience-evidence,
+  .channel-evidence {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .competitor-case {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .planning-funnel ol {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .planning-funnel li:nth-child(2)::after {
+    content: none;
+  }
+
+  .decision .targets strong {
+    font-size: 37px;
+  }
+}
